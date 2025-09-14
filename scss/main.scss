@@ -83,3 +83,12 @@ p {
     transition: all 0.3s;
   }
 }
+
+.tab-pane h3 {
+  color: $primary;
+  margin-top: 1rem;
+}
+
+.tab-pane i {
+  color: $green;
+}
