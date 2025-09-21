@@ -1,0 +1,251 @@
+<div class="hero-scene text-center text-white">
+  <div class="hero-scene-content">
+    <h1>Modifier la carte</h1>
+  </div>
+</div>
+
+<div class="container">
+  <form>
+    <!-- Sélection du menu à modifier -->
+    <div class="mb-3">
+      <label for="selectMenu" class="form-label">Menu</label>
+      <select class="form-select" id="selectMenu" name="Menu">
+        <option selected>Quel menu voulez-vous modifier ?</option>
+        <option value="1">Petit Menu</option>
+        <option value="2">Grand Menu</option>
+        <option value="3">Menu Enfant</option>
+      </select>
+    </div>
+    <!-- Sélection de la partie du menu à modifier -->
+    <div class="mb-3 d-block" id="petitMenuSelectPart">
+      <label for="selectPart" class="form-label">Partie</label>
+      <select class="form-select" id="selectMenu" name="Menu">
+        <option selected>Quelle partie voulez-vous modifier ?</option>
+        <option value="1">Formules</option>
+        <option value="2">Entrée</option>
+        <option value="3">Plat</option>
+        <option value="4">Fromage ou Dessert</option>
+      </select>
+    </div>
+    <!-- Parties à modifier -->
+    <!-- Formules petit menu -->
+    <div class="mb-3 d-none" id="petitMenuFormulesInput">
+      <label for="FormulesInput" class="form-label">Formules</label>
+      <div class="mb-3 input-group" id="formulInput1">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Formule </span>
+        </div>
+        <input
+          type="text"
+          id="FormuleInput11"
+          aria-label="First name"
+          class="form-control"
+          value="entrée – plat – dessert"
+        />
+        <div class="input-group-prepend">
+          <span class="input-group-text"> à </span>
+        </div>
+        <input
+          type="text"
+          id="FormuleInput12"
+          aria-label="First name"
+          class="form-control"
+          value="31,50"
+        />
+        <div class="input-group-prepend">
+          <span class="input-group-text"> €</span>
+        </div>
+        <div class="input-group-append">
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            id="button-addon"
+          >
+            <i class="bi bi-dash-lg"></i>
+          </button>
+        </div>
+      </div>
+      <div class="mb-3 input-group" id="formulInput2">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Formule </span>
+        </div>
+        <input
+          type="text"
+          id="FormuleInput21"
+          aria-label="First name"
+          class="form-control"
+          value="plat – dessert"
+        />
+        <div class="input-group-prepend">
+          <span class="input-group-text"> à </span>
+        </div>
+        <input
+          type="text"
+          id="FormuleInput22"
+          aria-label="First name"
+          class="form-control"
+          value="26,50"
+        />
+        <div class="input-group-prepend">
+          <span class="input-group-text"> €</span>
+        </div>
+        <div class="input-group-append">
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            id="button-addon"
+          >
+            <i class="bi bi-dash-lg"></i>
+          </button>
+        </div>
+      </div>
+      <div class="mb-3 input-group" id="formulInput2">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Formule </span>
+        </div>
+        <input
+          type="text"
+          id="FormuleInput21"
+          aria-label="First name"
+          class="form-control"
+          value="entrée – plat"
+        />
+        <div class="input-group-prepend">
+          <span class="input-group-text"> à </span>
+        </div>
+        <input
+          type="text"
+          id="FormuleInput22"
+          aria-label="First name"
+          class="form-control"
+          value="29,50"
+        />
+        <div class="input-group-prepend">
+          <span class="input-group-text"> €</span>
+        </div>
+        <div class="input-group-append">
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            id="button-addon"
+          >
+            <i class="bi bi-plus-lg"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Entrées petit menu -->
+    <div class="mb-3 d-bloc" id="petitMenuEntreeInput">
+      <label for="EntreeInput" class="form-label">Entrée</label>
+      <div class="mb-3 input-group" id="entreeInput1">
+        <input
+          type="text"
+          id="entreeInput11"
+          aria-label="First name"
+          class="form-control"
+          value="Velouté de carottes froid au gingembre et curry, crème fouettée aux épices et croûtons à l’huile d’olive"
+        />
+        <div class="input-group-text">
+          <i class="bi bi-leaf-fill"></i>
+          <input
+            type="checkbox"
+            id="entreeInput12"
+            aria-label="Checkbox pour plat végétarien"
+            checked
+          />
+        </div>
+        <div class="input-group-append">
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            id="button-addon"
+          >
+            <i class="bi bi-dash-lg"></i>
+          </button>
+        </div>
+      </div>
+      <div class="mb-3 input-group" id="entreeInput2">
+        <input
+          type="text"
+          id="entreeInput11"
+          aria-label="First name"
+          class="form-control"
+          value="Confit niçois burratina, vinaigrette à la tapenade, bouquet de salade"
+        />
+        <div class="input-group-text">
+          <i class="bi bi-leaf-fill"></i>
+          <input
+            type="checkbox"
+            id="entreeInput12"
+            aria-label="Checkbox pour plat végétarien"
+            checked
+          />
+        </div>
+        <div class="input-group-append">
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            id="button-addon"
+          >
+            <i class="bi bi-dash-lg"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary">Valider</button>
+      <button
+        type="button"
+        class="btn btn-danger"
+        data-bs-toggle="modal"
+        data-bs-target="#CancelEditMenuModal"
+      >
+        Annuler
+      </button>
+    </div>
+  </form>
+</div>
+
+<!-- Modal d'annulation -->
+<div
+  class="modal fade"
+  id="CancelEditMenuModal"
+  tabindex="-1"
+  aria-labelledby="CancelEditMenuModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-5" id="EditMenuModalLabel">
+          Etes-vous sûr de vouloir annuler l'édition de la carte ?
+        </h2>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="text-center">
+          <a
+            href="/carte"
+            class="btn btn-danger"
+            tabindex="-1"
+            role="button"
+            aria-pressed="true"
+            >Oui</a
+          >
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Non
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

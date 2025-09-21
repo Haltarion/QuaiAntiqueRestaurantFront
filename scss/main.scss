@@ -102,7 +102,7 @@ p {
   margin-top: 1rem;
 }
 
-.tab-pane i {
+.bi-leaf-fill {
   color: $green;
 }
 
@@ -120,4 +120,33 @@ td {
     color: $black;
     padding: 10px;
   }
+}
+
+.menu-card {
+  position: relative;
+  &:hover {
+    .action-menu-buttons {
+      opacity: 1;
+    }
+  }
+
+  .action-menu-buttons {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    padding: 5px;
+    gap: 10px;
+    display: flex;
+    justify-content: flex-end;
+    opacity: 0;
+    transition: all 0.3s;
+  }
+}
+
+.modal-title {
+  text-align: center;
+}
+
+.input-group-text {
+  gap: 10px;
 }
