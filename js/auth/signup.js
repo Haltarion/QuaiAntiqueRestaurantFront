@@ -1,3 +1,4 @@
+// Récupération des inputs du formulaire
 const inputNom = document.getElementById("NomInput");
 const inputPrenom = document.getElementById("PrenomInput");
 const inputMail = document.getElementById("EmailInput");
@@ -8,6 +9,7 @@ const inputValidationPassword = document.getElementById(
 const btnValidation = document.getElementById("btn-validation-inscription");
 const formInscription = document.getElementById("formulaireInscription");
 
+// Ajout d'écoute des événements sur les inputs et le bouton
 inputNom.addEventListener("keyup", validateForm);
 inputPrenom.addEventListener("keyup", validateForm);
 inputMail.addEventListener("keyup", validateForm);
@@ -16,7 +18,7 @@ inputValidationPassword.addEventListener("keyup", validateForm);
 
 btnValidation.addEventListener("click", InscrireUtilisateur);
 
-//Function permettant de valider tout le formulaire
+//Function permettant de valider tout le formulaire et d'activer le bouton si tout est ok
 function validateForm() {
   const nomOk = validateRequired(inputNom);
   const prenomOk = validateRequired(inputPrenom);
@@ -34,6 +36,7 @@ function validateForm() {
   }
 }
 
+// Fonction de validation de l'email
 function validateMail(input) {
   //Définir mon regex
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -49,6 +52,7 @@ function validateMail(input) {
   }
 }
 
+// Fonction de validation du mot de passe
 function validatePassword(input) {
   //Définir mon regex
   const passwordRegex =
@@ -65,6 +69,7 @@ function validatePassword(input) {
   }
 }
 
+// Fonction de validation de la confirmation du mot de passe
 function validateConfirmationPassword(inputPwd, inputConfirmPwd) {
   if (inputPwd.value == inputConfirmPwd.value) {
     inputConfirmPwd.classList.add("is-valid");
@@ -77,6 +82,7 @@ function validateConfirmationPassword(inputPwd, inputConfirmPwd) {
   }
 }
 
+// Fonction de validation des champs requis
 function validateRequired(input) {
   if (input.value != "") {
     input.classList.add("is-valid");
@@ -89,6 +95,7 @@ function validateRequired(input) {
   }
 }
 
+// Fonction d'inscription de l'utilisateur
 function InscrireUtilisateur() {
   let dataForm = new FormData(formInscription);
 

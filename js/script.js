@@ -7,7 +7,18 @@ const apiUrl = "https://127.0.0.1:8000/api/";
 signoutBtn.addEventListener("click", signout);
 
 function getRole() {
-  return getCookie(RoleCookieName);
+  const roleCookie = getCookie(RoleCookieName); // récupère ROLE_ADMIN ou ROLE_USER
+  if (!roleCookie) return null;
+
+  // transformation en valeur simplifiée
+  switch (roleCookie) {
+    case "ROLE_ADMIN":
+      return "admin";
+    case "ROLE_USER":
+      return "client";
+    default:
+      return null;
+  }
 }
 
 function signout() {
@@ -57,6 +68,7 @@ function isConnected() {
   }
 }
 
+// Affichage/masquage des éléments en fonction du rôle
 function showAndHideElementsForRoles() {
   const userConnected = isConnected();
   const role = getRole();

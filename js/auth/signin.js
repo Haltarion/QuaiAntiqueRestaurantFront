@@ -5,6 +5,7 @@ const signinForm = document.getElementById("signinForm");
 
 btnSingin.addEventListener("click", checkCredentials);
 
+// Vérification des identifiants
 function checkCredentials() {
   let dataForm = new FormData(signinForm);
 
@@ -23,6 +24,7 @@ function checkCredentials() {
     redirect: "follow",
   };
 
+  // Appel API pour la vérification des identifiants
   fetch(apiUrl + "login", requestOptions)
     .then((response) => {
       if (response.ok) {
