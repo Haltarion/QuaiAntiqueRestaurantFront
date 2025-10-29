@@ -100,3 +100,55 @@ function showAndHideElementsForRoles() {
     }
   });
 }
+
+function sanitizeHtml(text) {
+  // Créez un élément HTML temporaire de type "div"
+  const tempHtml = document.createElement("div");
+
+  // Affectez le texte reçu en tant que contenu texte de l'élément "tempHtml"
+  tempHtml.textContent = text;
+
+  // Utilisez .innerHTML pour récupérer le contenu de "tempHtml"
+  // Cela va "neutraliser" ou "échapper" tout code HTML potentiellement malveillant
+  return tempHtml.innerHTML;
+}
+
+function getInfosUser() {
+  // Construction du headers de la requête
+  const myHeaders = new Headers();
+  // On utilise une méthode pour ajouter le token de l'utilisateur au headers
+  myHeaders.append("X-AUTH-TOKEN", getToken());
+
+  // Construction des options de la requête
+  const requestOptions = {
+    method: "GET",
+    headers: myHeaders,
+    redirect: "follow",
+  };
+
+  // Quand on a la réponse, on la retourne
+  fetch(apiUrl + "account/me", requestOptions)
+    .then((response) => {
+      // Si la réponse est OK, on la retourne
+      if (response.ok) {
+        return response.json();
+      } else {
+        // Sinon on retourne un message dans la console
+        console.log(
+          "Impossible de récupérer les informations de l'utilisateur"
+        );
+      }
+    })
+    // On récupère le résultat de la requête
+    .then((result) => {
+      // Et on le retourne
+      return result;
+    })
+    // En cas d'erreur, on les affiche en console
+    .catch((error) =>
+      console.error(
+        "erreur lors de la récupération des données utilisateur",
+        error
+      )
+    );
+}

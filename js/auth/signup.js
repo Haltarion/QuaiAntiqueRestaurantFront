@@ -99,9 +99,11 @@ function validateRequired(input) {
 function InscrireUtilisateur() {
   let dataForm = new FormData(formInscription);
 
+  // Construction du headers de la requête
   const myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
 
+  // Construction du raw de la requête
   const raw = JSON.stringify({
     firstName: dataForm.get("nom"),
     lastName: dataForm.get("prenom"),
@@ -109,6 +111,7 @@ function InscrireUtilisateur() {
     password: dataForm.get("mdp"),
   });
 
+  // Construction des options de la requête
   const requestOptions = {
     method: "POST",
     headers: myHeaders,
@@ -116,15 +119,20 @@ function InscrireUtilisateur() {
     redirect: "follow",
   };
 
+  // Quand on a la réponse
   fetch(apiUrl + "registration", requestOptions)
     .then((response) => {
+      // Si la réponse est OK, on la retourne
       if (response.ok) {
         return response.json();
       } else {
+        // Sinon on alerte l'utilisateur d'une erreur
         alert("Erreur lors de l'inscription");
       }
     })
+    // On récupère le résultat de la requête
     .then((result) => {
+      // On alerte l'utilisateur qu'il est bien inscrit
       alert(
         "Bravo " +
           dataForm.get("prenom") +
@@ -132,5 +140,6 @@ function InscrireUtilisateur() {
       );
       document.location.href = "/signin";
     })
+    // En cas d'erreur, on les affiche en console
     .catch((error) => console.error(error));
 }
